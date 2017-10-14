@@ -14,15 +14,11 @@ RULES = [
 rules = {}
 
 for rule in RULES:
-
     tmp = []
 
     with open("./{}.txt".format(rule)) as f:
-
         for line in [x.strip() for x in f.readlines()]:
-
             if line != "" and line[0] != "#":
-
                 tmp.append(line)
 
     rules[rule] = tmp
@@ -44,6 +40,9 @@ for category in rules["target_categories"]:
     next_page = None
     p["cmtitle"] = "Category:{}".format(category)
 
+    if "cmcontinue" in p:
+        p.pop("cmcontinue")
+
     while True:
         if next_page is not None:
             p["cmcontinue"] = next_page
@@ -60,13 +59,12 @@ for category in rules["target_categories"]:
         next_page = j["continue"]["cmcontinue"]
 
 
-### 閲覧数の取得と禁止カテゴリーに含まれる記事の除外
+### 閲覧数の取得と禁止条件に一致する記事の除外
 
 p = {"format": "json",
      "action": "query",
      "utf8": "",
      "cllimit": 500,
-     "pvipcontinue": "",
      "prop": "pageviews|categories|pageprops"}
 
 outputs = []
