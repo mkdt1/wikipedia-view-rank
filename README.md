@@ -5,8 +5,7 @@ wikipedia-view-rankはWikipedia記事の閲覧数を抽出するプログラム�
 ## ランキング指標
 
 本ランキングはWikipedia記事の過去60日分の閲覧数を基準にしております。
-本プログラムは[Mediawiki API](https://en.wikipedia.org/w/api.php?action=help&modules=main "MediaWiki API help - Wikipedia")を利用して情報
-を取得しておりますが、APIの仕様上、60日が閲覧数を取得できる最長期間になります。
+本プログラムは[Mediawiki API](https://en.wikipedia.org/w/api.php?action=help&modules=main "MediaWiki API help - Wikipedia")を利用して情報を取得しておりますが、APIの仕様上、60日が閲覧数を取得できる最長期間になります。
 
 ## 「現在のアイドルグループTOP200」の集計方法
 
