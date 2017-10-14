@@ -16,7 +16,7 @@ rules = {}
 for rule in RULES:
     tmp = []
 
-    with open("./{}.txt".format(rule)) as f:
+    with open("./rules/{}.txt".format(rule)) as f:
         for line in [x.strip() for x in f.readlines()]:
             if line != "" and line[0] != "#":
                 tmp.append(line)
